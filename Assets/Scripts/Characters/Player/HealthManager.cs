@@ -7,7 +7,7 @@ public class HealthManager : MonoBehaviour
 {
     [SerializeField] float startHealth = 100;
     float maxHealth;
-    float currentHealth;
+    public float currentHealth { get; private set; }
 
     private void Start()
     {
@@ -16,10 +16,16 @@ public class HealthManager : MonoBehaviour
         onLostHealth.AddListener(LoseHealth);
         onDeath.AddListener(Die);
         onGainedHealth.AddListener(GainHealth);
+        UpdateHealth();
     }
 
     public FloatEvent onLostHealth = new FloatEvent();
     public FloatEvent onGainedHealth = new FloatEvent();
+
+    /// <summary>
+    /// Parameters: Current health, Max health. 
+    /// </summary>
+    public FloatFloatEvent onHealthChanged = new FloatFloatEvent();
     public UnityEvent onDeath = new UnityEvent();
 
     /// <summary>
@@ -32,6 +38,7 @@ public class HealthManager : MonoBehaviour
         {
             onDeath.Invoke();
         }
+        UpdateHealth();
     }
     /// <summary>
     /// Don't call this, rather the event related to it. 
@@ -40,11 +47,17 @@ public class HealthManager : MonoBehaviour
     {
         currentHealth += amountGained;
         if (currentHealth > maxHealth) { currentHealth = maxHealth; }
+        UpdateHealth();
     }
 
 
     protected virtual void Die()
     {
+        //Todo: Implement death
+    }
 
+    void UpdateHealth()
+    {
+        onHealthChanged.Invoke(currentHealth, maxHealth);
     }
 }
