@@ -5,7 +5,8 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
-    private float shootingCooldown = 1f;
+    [SerializeField] private float shootingCooldown;
+    [SerializeField] private float bulletSpeed;
     private float timer = 0;
     private bool playerCanShoot = true;
     // Start is called before the first frame update
@@ -41,7 +42,7 @@ public class Shooting : MonoBehaviour
             GameObject blt = Instantiate(bullet,transform.position + (Vector3)(direction * 0.5f),Quaternion.identity);
 
             // Adds velocity to the bullet
-            blt.GetComponent<Rigidbody2D>().velocity = direction * 2;
+            blt.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
 
             //Let the bullet face the right direction
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
