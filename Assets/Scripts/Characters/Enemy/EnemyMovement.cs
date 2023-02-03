@@ -21,8 +21,7 @@ public class EnemyMovement : MonoBehaviour
     Vector2 FollowPlayer()
     {
         Vector2 directionToPlayer = new Vector2();
-        directionToPlayer = GameManager.Instance.player.transform.position - this.transform.position;
-        directionToPlayer.Normalize();
-        return directionToPlayer;
+        directionToPlayer = (this.transform.position - GameManager.Instance.player.transform.position).normalized;
+        return -directionToPlayer;
     }
 }

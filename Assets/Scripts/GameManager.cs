@@ -30,5 +30,5 @@ public class GameManager : MonoBehaviour
 
     }
 
-    [SerializeField] public GameObject player { get; private set; }
+    [SerializeField] public GameObject player;
 }
