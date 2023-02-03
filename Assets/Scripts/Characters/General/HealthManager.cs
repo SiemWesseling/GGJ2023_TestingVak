@@ -52,8 +52,11 @@ public class HealthManager : MonoBehaviour
 
     protected virtual void Die()
     {
-        onDeath.Invoke();
-        Destroy(gameObject);
+        if (gameObject.tag != "Player")
+        {
+            onDeath.Invoke();
+            Destroy(gameObject);
+        }
     }
 
     void UpdateHealth()
