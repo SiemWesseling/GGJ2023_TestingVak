@@ -43,6 +43,10 @@ public class Shooting : MonoBehaviour
             // Adds velocity to the bullet
             blt.GetComponent<Rigidbody2D>().velocity = direction * 2;
 
+            //Let the bullet face the right direction
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            blt.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+
             //Reset cooldown
             playerCanShoot = false;
             timer = 0;
