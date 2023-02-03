@@ -31,7 +31,7 @@ public class Shooting : MonoBehaviour
     void Update()
     {
         //Shooting
-        if (Input.GetMouseButtonDown(0) && playerCanShoot)
+        if (Input.GetMouseButton(0) && playerCanShoot)
         {
             Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 direction = (Vector2)((worldMousePos - transform.position));
