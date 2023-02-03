@@ -20,10 +20,9 @@ public class EnemyMovement : MonoBehaviour
 
     Vector2 FollowPlayer()
     {
-        // Check player location
-        // go towards said location
         Vector2 directionToPlayer = new Vector2();
-        //directionToPlayer = 
+        directionToPlayer = GameManager.Instance.player.transform.position - this.transform.position;
+        directionToPlayer.Normalize();
         return directionToPlayer;
     }
 }
