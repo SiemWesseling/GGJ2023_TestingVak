@@ -21,7 +21,7 @@ public class PlayerCollision : MonoBehaviour
         if(collision.tag == "Food")
         {
             Debug.Log("Yummie");
-            gameObject.GetComponent<Food>().food++;
+            gameObject.GetComponent<Food>().AddFood();
             Destroy(collision.gameObject);
         }
     }

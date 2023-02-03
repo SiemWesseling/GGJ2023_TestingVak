@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
-    public float food = 0;
+    public int food = 0;
+    public int foodRequired = 20;
 
+    [SerializeField] private FoodUI foodBar;
 
-    // Start is called before the first frame update
-    void Start()
+    public void AddFood()
     {
-        
-    }
+        food++;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //Change foodbar
+        foodBar.UpdateBar(food, foodRequired);
+
+
+        if (food >= foodRequired)
+        {
+            //Level up
+        }
     }
 }
