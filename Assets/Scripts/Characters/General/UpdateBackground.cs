@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class UpdateBackground : MonoBehaviour
 {
-    private Transform _player;
-    private Renderer _background;
+    [SerializeField] private Transform _player;
+    [SerializeField] private Renderer _background;
     private static readonly int Position = Shader.PropertyToID("_Position");
 
     void Start()
