@@ -9,7 +9,7 @@ public class Shooting : MonoBehaviour
     [SerializeField] private float bulletSpeed;
     private float timer = 0;
     private bool playerCanShoot = true;
-    // Start is called before the first frame update
+
     void Start()
     {
         timer = shootingCooldown;
@@ -28,7 +28,6 @@ public class Shooting : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         //Shooting
