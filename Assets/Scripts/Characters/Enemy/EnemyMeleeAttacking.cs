@@ -24,7 +24,7 @@ public class EnemyMeleeAttacking : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(tag == "Player")
+        if(collision.gameObject.tag == "Player")
         {
             MeleeHitPlayer(collision.gameObject.GetComponent<HealthManager>());
         }

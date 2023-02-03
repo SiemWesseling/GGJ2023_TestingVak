@@ -657,6 +657,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5777098860859352264, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5777098860859352264, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -664,5 +668,9 @@ PrefabInstance:
       propertyPath: healthManager
       value: 
       objectReference: {fileID: 114786973}
+    - target: {fileID: 7589608497761591772, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}

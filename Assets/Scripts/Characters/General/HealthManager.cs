@@ -58,6 +58,6 @@ public class HealthManager : MonoBehaviour
 
     void UpdateHealth()
     {
-        //onHealthChanged.Invoke(currentHealth, maxHealth);
+        onHealthChanged.Invoke(currentHealth, maxHealth);
     }
 }
