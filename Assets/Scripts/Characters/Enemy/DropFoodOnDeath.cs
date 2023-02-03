@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(HealthManager))]
-public class DropFoodOnDeath: MonoBehaviour
+public class DropFoodOnDeath : MonoBehaviour
 {
     HealthManager healthManager;
     [SerializeField] GameObject foodPrefab;
@@ -16,7 +16,7 @@ public class DropFoodOnDeath: MonoBehaviour
 
     void SpawnFood()
     {
-       var newFood =  Instantiate(foodPrefab);
+        var newFood = Instantiate(foodPrefab);
         newFood.transform.position = transform.position;
     }
 

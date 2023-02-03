@@ -14,7 +14,6 @@ public class HealthManager : MonoBehaviour
         currentHealth = startHealth;
         maxHealth = startHealth;
         onLostHealth.AddListener(LoseHealth);
-        onDeath.AddListener(Die);
         onGainedHealth.AddListener(GainHealth);
         UpdateHealth();
     }
@@ -26,7 +25,7 @@ public class HealthManager : MonoBehaviour
     /// Parameters: Current health, Max health. 
     /// </summary>
     public FloatFloatEvent onHealthChanged = new FloatFloatEvent();
-    public UnityEvent onDeath = new UnityEvent();
+    [HideInInspector] public UnityEvent onDeath = new UnityEvent();
 
     /// <summary>
     /// Don't call this, rather the event related to it. 
@@ -34,9 +33,9 @@ public class HealthManager : MonoBehaviour
     void LoseHealth(float amountLost)
     {
         currentHealth -= amountLost;
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
-            onDeath.Invoke();
+            Die();
         }
         UpdateHealth();
     }
@@ -53,11 +52,12 @@ public class HealthManager : MonoBehaviour
 
     protected virtual void Die()
     {
-        //Todo: Implement death
+        onDeath.Invoke();
+        Destroy(gameObject);
     }
 
     void UpdateHealth()
     {
-        onHealthChanged.Invoke(currentHealth, maxHealth);
+        //onHealthChanged.Invoke(currentHealth, maxHealth);
     }
 }
