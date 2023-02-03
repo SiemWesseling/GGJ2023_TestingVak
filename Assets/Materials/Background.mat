@@ -44,7 +44,7 @@ Material:
     - _MovementScale: 0.3
     - _PlayerMovementScale: 0.1
     m_Colors:
-    - _ColorA: {r: 0.4588235, g: 0.8784314, b: 0.4705882, a: 0}
-    - _ColorB: {r: 0.1294118, g: 0.3294118, b: 0.04313726, a: 0}
-    - _Position: {r: 41.67183, g: 77.639435, b: 0, a: 0}
+    - _ColorA: {r: 0.09344962, g: 0.82764447, b: 0.9433962, a: 0}
+    - _ColorB: {r: 0.051886797, g: 0.9003613, b: 1, a: 0}
+    - _Position: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
