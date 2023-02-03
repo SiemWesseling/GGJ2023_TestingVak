@@ -23,9 +23,34 @@ public class CharacterMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (rb.velocity.magnitude < maxSpeed)
+        DoMovement();
+    }
+
+    private void DoMovement()
+    {
+        if (direction == Vector2.zero)
         {
-            rb.AddForce(direction * acceleration);
+            ApplyDescelleration();
+            return;
+        }
+
+        rb.AddForce(direction * acceleration);
+
+        if (rb.velocity.magnitude > maxSpeed)
+        {
+            rb.velocity = rb.velocity.normalized * maxSpeed;
+        }
+    }
+
+    void ApplyDescelleration()
+    {
+        if (rb.velocity.magnitude != 0f) {
+            rb.velocity -= rb.velocity.normalized *  0.01f * descelleration;
+        }
+        if (rb.velocity.magnitude < maxSpeed / 10f)
+        {
+            rb.velocity = Vector2.zero;
         }
     }
 }
+
