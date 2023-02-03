@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6486169075050382671}
   - component: {fileID: 6442010650437396560}
   - component: {fileID: 1226983712}
+  - component: {fileID: 3212001503972598141}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -191,6 +192,20 @@ MonoBehaviour:
   bullet: {fileID: 4972724380384317805, guid: a6e2182d6a6f3bb47ba0ec746b2717d9, type: 3}
   shootingCooldown: 0
   bulletSpeed: 0
+--- !u!114 &3212001503972598141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6486169075050382667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87e7acd7ab914e344a750ae155b26613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 0}
+  _background: {fileID: 0}
 --- !u!1 &6486169075711286239
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,6 +334,14 @@ PrefabInstance:
     - target: {fileID: 3994463958831506003, guid: 7e6d7cf88e7f70f419aa32dd592ca623, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994463958831506003, guid: 7e6d7cf88e7f70f419aa32dd592ca623, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994463958831506003, guid: 7e6d7cf88e7f70f419aa32dd592ca623, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3994463958831506003, guid: 7e6d7cf88e7f70f419aa32dd592ca623, type: 3}
       propertyPath: m_LocalPosition.x
