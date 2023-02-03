@@ -568,6 +568,30 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1056040371194677092, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056040371194677092, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056040371194677092, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056040371194677092, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056040371194677092, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 351
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056040371194677092, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 48
+      objectReference: {fileID: 0}
     - target: {fileID: 3598702919695848051, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
       propertyPath: m_Name
       value: HUD
