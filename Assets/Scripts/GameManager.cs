@@ -31,4 +31,6 @@ public class GameManager : MonoBehaviour
     }
 
     [SerializeField] public GameObject player;
+    public bool paused = false;
+    public PausingManager pausingManager;
 }

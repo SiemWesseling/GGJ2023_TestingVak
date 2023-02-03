@@ -20,6 +20,7 @@ public class Food : MonoBehaviour
         if (food >= foodRequired)
         {
             //Level up
+            GameManager.Instance.pausingManager.PauseGame();
         }
     }
 }
