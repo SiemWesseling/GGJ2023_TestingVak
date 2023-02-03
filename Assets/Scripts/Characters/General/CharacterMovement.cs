@@ -10,7 +10,7 @@ public class CharacterMovement : MonoBehaviour
     Rigidbody2D rb;
 
     Vector2 direction;
-    // Start is called before the first frame update
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
