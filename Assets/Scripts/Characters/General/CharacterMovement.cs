@@ -6,6 +6,8 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     [SerializeField] private float acceleration, maxSpeed, descelleration;
+    
+    [SerializeField] private Animator animator;
 
     Rigidbody2D rb;
 
@@ -14,6 +16,11 @@ public class CharacterMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        if (animator == null)
+        {
+            animator = GameObject.FindWithTag("PlayerSprite").GetComponent<Animator>();
+        }
     }
 
     public void SetDirection(Vector2 direction)
@@ -30,8 +37,18 @@ public class CharacterMovement : MonoBehaviour
     {
         if (direction == Vector2.zero)
         {
+            if (animator != null)
+            {
+                animator.SetBool("isMoving", false);
+            }
+
             ApplyDescelleration();
             return;
+        }
+        
+        if (animator != null)
+        {
+            animator.SetBool("isMoving", true);
         }
 
         rb.AddForce(direction * acceleration);
