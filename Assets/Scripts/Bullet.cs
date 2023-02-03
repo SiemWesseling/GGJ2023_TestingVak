@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
     {
         if (destroyInTime > 0)
         {
-            DestroyInSeconds(destroyInTime);
+            StartCoroutine(DestroyInSeconds(destroyInTime));
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
