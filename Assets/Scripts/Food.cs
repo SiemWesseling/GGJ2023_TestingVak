@@ -21,6 +21,8 @@ public class Food : MonoBehaviour
         {
             //Level up
             GameManager.Instance.pausingManager.PauseGame();
+
+            //TODO: Reset food to 0 and increase food required
         }
     }
 
