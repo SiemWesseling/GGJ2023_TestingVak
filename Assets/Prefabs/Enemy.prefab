@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -2666934088489376452}
   - component: {fileID: 4219242667458581359}
   - component: {fileID: 154729273042670444}
+  - component: {fileID: 3504780842414761921}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -1183793213, guid: 84cbbb4500337df4b9a0c2aa95da4e5f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -153,6 +154,7 @@ MonoBehaviour:
   acceleration: 100
   maxSpeed: 0.1
   descelleration: 100
+  animator: {fileID: 3504780842414761921}
 --- !u!114 &5907998364154924893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +193,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad9cb16b768202429b188de91d44928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  _behavioursToDisableOnDeath:
+  - {fileID: 5907998364154924893}
+  - {fileID: -2666934088489376452}
+  - {fileID: 5907998364154924894}
   startHealth: 100
   onDeath:
     m_PersistentCalls:
@@ -208,3 +215,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodPrefab: {fileID: 5386707304144329832, guid: e2cc255162965c848873c5aa03e11b53, type: 3}
+--- !u!95 &3504780842414761921
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5907998364154924864}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: db03b6f3c4b1c5846b9cfeee372fb3ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

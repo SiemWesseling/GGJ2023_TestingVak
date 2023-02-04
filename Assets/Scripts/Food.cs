@@ -20,6 +20,17 @@ public class Food : MonoBehaviour
         if (food >= foodRequired)
         {
             //Level up
+            GameManager.Instance.pausingManager.PauseGame();
+
+            //TODO: Reset food to 0 and increase food required
+        }
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            GameManager.Instance.pausingManager.UnPauseGame();
         }
     }
 }
