@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!61 &91183507 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5907998364154924865, guid: 82d511b8900da884aa2b574b37bb1da6, type: 3}
+  m_PrefabInstance: {fileID: 298013861}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &114786971 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6486169075050382667, guid: 47f522208a5e95a41857f39f33180c5b, type: 3}
@@ -139,6 +144,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad9cb16b768202429b188de91d44928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114786983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114786971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 408824a8076602947a0668b69e058ef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthManager: {fileID: 114786973}
+  regenRate: 1
+  regenWait: 5
+--- !u!114 &152170144 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9214379469358864060, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
+  m_PrefabInstance: {fileID: 1331661994}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &291205660 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4476934427229190705, guid: 4b793d39e58e6444fa566aaa3d92cb89, type: 3}
@@ -151,6 +182,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4219242667458581359, guid: 82d511b8900da884aa2b574b37bb1da6, type: 3}
+      propertyPath: _behavioursToDisableOnDeath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219242667458581359, guid: 82d511b8900da884aa2b574b37bb1da6, type: 3}
+      propertyPath: _behavioursToDisableOnDeath.Array.data[3]
+      value: 
+      objectReference: {fileID: 91183507}
     - target: {fileID: 5907998364154924864, guid: 82d511b8900da884aa2b574b37bb1da6, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -520,6 +559,10 @@ PrefabInstance:
       propertyPath: foodBar
       value: 
       objectReference: {fileID: 600878525}
+    - target: {fileID: 6442010650437396560, guid: 47f522208a5e95a41857f39f33180c5b, type: 3}
+      propertyPath: startHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6486169075050382667, guid: 47f522208a5e95a41857f39f33180c5b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -589,29 +632,9 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -0.27700806
       objectReference: {fileID: 0}
-    - target: {fileID: 1056040371194677092, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1056040371194677092, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1056040371194677092, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1056040371194677092, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1056040371194677092, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 351
-      objectReference: {fileID: 0}
-    - target: {fileID: 1056040371194677092, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 48
+    - target: {fileID: 3598702919695848049, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3598702919695848051, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
       propertyPath: m_Name
@@ -717,6 +740,14 @@ PrefabInstance:
       propertyPath: healthManager
       value: 
       objectReference: {fileID: 114786973}
+    - target: {fileID: 6429715710886727174, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
+      propertyPath: maxHealthText
+      value: 
+      objectReference: {fileID: 152170144}
+    - target: {fileID: 6429715710886727174, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
+      propertyPath: currentHealthText
+      value: 
+      objectReference: {fileID: 1374389371}
     - target: {fileID: 7589608497761591772, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
       propertyPath: m_Value
       value: 1
@@ -727,6 +758,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
+--- !u!114 &1374389371 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 205729878687824745, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
+  m_PrefabInstance: {fileID: 1331661994}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4476934427484424237
 PrefabInstance:
   m_ObjectHideFlags: 0

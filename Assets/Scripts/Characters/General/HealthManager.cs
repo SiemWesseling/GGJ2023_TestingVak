@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,6 @@ public class HealthManager : MonoBehaviour
     [SerializeField] float startHealth = 100;
     float maxHealth;
     public float currentHealth { get; private set; }
-    
 
     private void Start()
     {
@@ -45,6 +45,7 @@ public class HealthManager : MonoBehaviour
         }
         UpdateHealth();
     }
+    
     /// <summary>
     /// Don't call this, rather the event related to it. 
     /// </summary>
@@ -81,5 +82,11 @@ public class HealthManager : MonoBehaviour
     void UpdateHealth()
     {
         onHealthChanged.Invoke(currentHealth, maxHealth);
+    }
+
+    private void OnDestroy()
+    {
+        onLostHealth.RemoveListener(LoseHealth);
+        onGainedHealth.RemoveListener(GainHealth);
     }
 }
