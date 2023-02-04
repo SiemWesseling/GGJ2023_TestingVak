@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
         private set { instance = value; }
     }
 
-    private void Start()
+    private void Awake()
     {
         if (!instance)
         {
