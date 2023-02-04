@@ -15,8 +15,6 @@ public class EnemyRangedAttack : MonoBehaviour
     private GameObject player;
 
     private bool canShoot = false;
-    private bool needToMove = false;
-    private bool hasAlreadyShot = false;
 
     [SerializeField] private float bulletCooldown = 1f;
     private float bulletTimer = 0f;
