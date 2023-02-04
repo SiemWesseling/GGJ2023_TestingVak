@@ -11,21 +11,12 @@ public class Upgrade : ScriptableObject
     [SerializeField] public string upgradeName;
     [SerializeField] public string description;
     [Tooltip("If you want to add more you have to add new possibilities to the enum")]
-    [SerializeField] private UpgradeBehavioursData.behaviours addThis;
-    [SerializeField]
-    public UpgradeBehaviour addThisToPlayer
-    {
-        get
-        {
-            Debug.Log(new ShootBackwards());
-            return UpgradeBehavioursData.GetBehaviour(addThis);
-        }
-    }
+    [SerializeField] public UpgradeBehavioursData.behaviours addThis;
     [SerializeField] public PlayerStats.StatUpgrade[] baseStatUpgrade;
 }
 
 [System.Serializable]
-class UpgradeBehavioursData
+public class UpgradeBehavioursData
 {
     public enum behaviours
     {

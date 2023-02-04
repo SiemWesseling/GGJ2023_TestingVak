@@ -28,30 +28,30 @@ public class UpgradeManager : MonoBehaviour
 
     void ExecuteUpgrade(Upgrade upgrade)
     {
+        //Manage the base stat upgrades
         foreach (PlayerStats.StatUpgrade up in upgrade.baseStatUpgrade)
         {
             PlayerStats.Instance.UpgradeValue(up);
         }
-        var player = GameManager.Instance.player;
-
-
         //Handle adding new behaviour to the player
-        UpgradeBehaviour[] currentVersions = player.GetComponents<UpgradeBehaviour>();
-        bool versionFound = false;
-        for (int i = 0; i < currentVersions.Length; i++)
-        {
-            Debug.Log(currentVersions[i].GetType() + " and " + upgrade.addThisToPlayer.GetType());
-            if (currentVersions[i].GetType() == upgrade.addThisToPlayer.GetType())
-            {
-                versionFound = true;
-                currentVersions[i].LevelUp();
-            }
-        }
+        ApplyAddedComponent(upgrade.addThis);
+    }
 
-        if (!versionFound && upgrade.addThisToPlayer)
+    void ApplyAddedComponent(UpgradeBehavioursData.behaviours behaviour)
+    {
+        var player = GameManager.Instance.player;
+        switch (behaviour)
         {
-            //Todo: Check that this works
-            GameManager.Instance.player.AddComponent(upgrade.addThisToPlayer.GetType());
+            case UpgradeBehavioursData.behaviours.Nothing:
+                return;
+                break;
+
+            case UpgradeBehavioursData.behaviours.ShootBack:
+                ShootBackwards currentVersion = player.GetComponent<ShootBackwards>();
+                if (currentVersion) { currentVersion.LevelUp(); }
+                else { player.AddComponent<ShootBackwards>(); }
+                break;
+
         }
     }
 

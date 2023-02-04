@@ -47,5 +47,5 @@ Material:
     m_Colors:
     - _ColorA: {r: 0.08876031, g: 0.4339623, b: 0.079832695, a: 0}
     - _ColorB: {r: 0.43906498, g: 0.754717, b: 0.28123888, a: 0}
-    - _Position: {r: 2.00283, g: -1.8219136, b: 0, a: 0}
+    - _Position: {r: -23.512527, g: -1.5181901, b: 0, a: 0}
   m_BuildTextureStacks: []
