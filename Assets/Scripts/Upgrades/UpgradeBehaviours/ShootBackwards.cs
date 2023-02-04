@@ -7,6 +7,7 @@ namespace Upgradebehaviours
     [RequireComponent(typeof(Shooting))]
     public class ShootBackwards : UpgradeBehaviour
     {
+        float sizeIncreasePerUpgrade = .2f;
         Shooting shooting;
         private void Start()
         {
@@ -23,6 +24,7 @@ namespace Upgradebehaviours
             //Let the bullet face the right direction
             float angle = Mathf.Atan2(-velocity.y, -velocity.x) * Mathf.Rad2Deg;
             newBullet.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+            newBullet.transform.localScale *= 1f + (float)level * sizeIncreasePerUpgrade;
         }
     }
 }
