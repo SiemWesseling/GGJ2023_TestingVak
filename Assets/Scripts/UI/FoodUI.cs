@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class FoodUI : MonoBehaviour
 {
-    private Slider foodSlider;
+    [SerializeField] private Slider foodSlider;
     // Start is called before the first frame update
     void Start()
     {
-        foodSlider = GetComponent<Slider>();
+        if (foodSlider == null)
+        {
+            foodSlider = GetComponent<Slider>();
+        }
     }
 
 

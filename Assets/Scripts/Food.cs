@@ -9,21 +9,29 @@ public class Food : MonoBehaviour
 
     [SerializeField] private FoodUI foodBar;
 
+    private void Start()
+    {
+        foodBar.UpdateBar(food, foodRequired);
+    }
+
     public void AddFood()
     {
         food++;
-
-        //Change foodbar
-        foodBar.UpdateBar(food, foodRequired);
-
 
         if (food >= foodRequired)
         {
             //Level up
             GameManager.Instance.pausingManager.PauseGame();
+            
+            food = 0;
+            foodRequired = (int)(foodRequired * 1.25f);
 
-            //TODO: Reset food to 0 and increase food required
+            Debug.Log(food);
+            Debug.Log(foodRequired);
         }
+        
+        //Change foodbar
+        foodBar.UpdateBar(food, foodRequired);
     }
 
     public void Update()

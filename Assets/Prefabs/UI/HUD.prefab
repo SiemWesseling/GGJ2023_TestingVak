@@ -216,6 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c978a1ec94b51438cac5ee98b0cc1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodSlider: {fileID: 390503071}
 --- !u!1 &1241003756
 GameObject:
   m_ObjectHideFlags: 0
