@@ -328,6 +328,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 782011374349135340, guid: a6ce32fe44c868b41a8455f7e6f4575a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 782011374349135340, guid: a6ce32fe44c868b41a8455f7e6f4575a, type: 3}
+      propertyPath: fireRateUpgrades
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3572900123369258116, guid: a6ce32fe44c868b41a8455f7e6f4575a, type: 3}
       propertyPath: m_Name
       value: Gamemanager
@@ -591,6 +599,10 @@ PrefabInstance:
     - target: {fileID: 1056040371194677092, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598702919695848049, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3598702919695848051, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
       propertyPath: m_Name

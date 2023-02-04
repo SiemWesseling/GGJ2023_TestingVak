@@ -6,13 +6,15 @@ public class Shooting : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
     [SerializeField] private float shootingCooldown;
+    float upgradedShootingCooldown { get { return shootingCooldown / PlayerStats.Instance.fireRateMult; } }
+
     [SerializeField] private float bulletSpeed;
     private float timer = 0;
     private bool playerCanShoot = true;
 
     void Start()
     {
-        timer = shootingCooldown;
+        timer = upgradedShootingCooldown;
     }
 
     private void FixedUpdate()
@@ -21,7 +23,7 @@ public class Shooting : MonoBehaviour
         if (playerCanShoot == false)
         {
             timer += Time.deltaTime;
-            if (timer >= shootingCooldown)
+            if (timer >= upgradedShootingCooldown)
             {
                 playerCanShoot = true;
             }
