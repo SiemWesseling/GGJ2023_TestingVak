@@ -43,8 +43,9 @@ Material:
     - _Cell_Density: 8.5
     - _MovementScale: 0.3
     - _PlayerMovementScale: 0.01
+    - _pixelArtAmount: 1000
     m_Colors:
     - _ColorA: {r: 0.08876031, g: 0.4339623, b: 0.079832695, a: 0}
     - _ColorB: {r: 0.43906498, g: 0.754717, b: 0.28123888, a: 0}
-    - _Position: {r: 6.2542896, g: -4.993984, b: 0, a: 0}
+    - _Position: {r: 5.2601566, g: -1.9892936, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -5,12 +5,18 @@ using UnityEngine.Events;
 
 public class HealthManager : MonoBehaviour
 {
+    [SerializeField] private Animator animator;
+    [SerializeField] private Behaviour[] _behavioursToDisableOnDeath;
+
     [SerializeField] float startHealth = 100;
     float maxHealth;
     public float currentHealth { get; private set; }
+    
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
+        
         currentHealth = startHealth;
         maxHealth = startHealth;
         onLostHealth.AddListener(LoseHealth);
@@ -54,9 +60,21 @@ public class HealthManager : MonoBehaviour
     {
         if (gameObject.tag != "Player")
         {
-            onDeath.Invoke();
-            Destroy(gameObject);
+            animator.SetTrigger("enemyDies");
+            foreach(Behaviour behaviour in _behavioursToDisableOnDeath)
+            {
+                behaviour.enabled = false;
+            }
+            
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
+    }
+
+    //This function is being ran by the animator
+    private void RunAfterDeathAnim()
+    {
+        onDeath.Invoke();
+        Destroy(gameObject);
     }
 
     void UpdateHealth()

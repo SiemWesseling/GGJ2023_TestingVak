@@ -6,9 +6,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     static GameManager instance;
-
-    [SerializeField] public GameObject player;
-
     public static GameManager Instance
     {
         get
@@ -23,7 +20,7 @@ public class GameManager : MonoBehaviour
         private set { instance = value; }
     }
 
-    private void Awake()
+    private void Start()
     {
         if (!instance)
         {
@@ -32,4 +29,9 @@ public class GameManager : MonoBehaviour
         else { Debug.LogWarning("There seem to be multiple gamemanagers in the scene "); }
 
     }
+
+    [SerializeField] public GameObject player;
+    public bool paused = false;
+    public PausingManager pausingManager;
+    public GameObject mutationUI;
 }
