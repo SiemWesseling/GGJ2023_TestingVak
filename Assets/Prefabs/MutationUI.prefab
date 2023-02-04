@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4476934427229190706}
   - component: {fileID: 4476934427229190707}
   - component: {fileID: 4476934427229190704}
+  - component: {fileID: 5768245527149041159}
   m_Layer: 5
   m_Name: MutationUI
   m_TagString: Untagged
@@ -105,6 +106,26 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5768245527149041159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476934427229190705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75146a012da280a499e0883c662ed45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onLevelUp:
+    m_PersistentCalls:
+      m_Calls: []
+  availableUpgrades:
+  - {fileID: 11400000, guid: 8b69503cdae2c8d4ea120d1bd11e5554, type: 2}
+  - {fileID: 11400000, guid: 4a305fcde66a16c40bb3d37686c3ab9a, type: 2}
+  - {fileID: 11400000, guid: 7f718a29b80f001478ea081eb05170df, type: 2}
+  - {fileID: 11400000, guid: 5b6b8e4024c0d4c4ebd646adbd28b196, type: 2}
 --- !u!1 &4476934428072684887
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,12 +340,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Description
       objectReference: {fileID: 0}
-    - target: {fileID: 1667751649102709908, guid: 7ca4b57b1504d2747a7dc0e76e8c7d40, type: 3}
-      propertyPath: m_text
-      value: 'Name
-
-'
-      objectReference: {fileID: 0}
     - target: {fileID: 1667751649129244350, guid: 7ca4b57b1504d2747a7dc0e76e8c7d40, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -462,12 +477,6 @@ PrefabInstance:
     - target: {fileID: 1667751648911897531, guid: 7ca4b57b1504d2747a7dc0e76e8c7d40, type: 3}
       propertyPath: m_Name
       value: Description
-      objectReference: {fileID: 0}
-    - target: {fileID: 1667751649102709908, guid: 7ca4b57b1504d2747a7dc0e76e8c7d40, type: 3}
-      propertyPath: m_text
-      value: 'Name
-
-'
       objectReference: {fileID: 0}
     - target: {fileID: 1667751649129244350, guid: 7ca4b57b1504d2747a7dc0e76e8c7d40, type: 3}
       propertyPath: m_AnchorMax.x

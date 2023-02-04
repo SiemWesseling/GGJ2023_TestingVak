@@ -4,36 +4,37 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public enum upgrades
+    public enum StatUpgrade
     {
         Speed,
         FireRate,
         ProjectileSpeed
     }
 
-    public upgrades upgrade;
-
     private static PlayerStats instance;
 
     public static PlayerStats Instance { get { return instance; } private set { instance = value; } }
-    private void Start()
+    private void Awake()
     {
         if (!instance) { instance = this; }
         else { Debug.LogWarning("There seem to be multiple playerstats in the scene"); }
     }
 
+
+    public void UpgradeValue(StatUpgrade upgrade) { UpgradeValue((int)upgrade); }
+
     public void UpgradeValue(int upgrade)
     {
-        Debug.Log("DoUpgrade");
         switch (upgrade)
         {
-            case (int)upgrades.Speed: speedUpgrades++; break;
+            case (int)StatUpgrade.Speed: speedUpgrades++; break;
 
-            case (int)upgrades.FireRate: fireRateUpgrades++; break;
+            case (int)StatUpgrade.FireRate: fireRateUpgrades++; break;
 
-            case (int)upgrades.ProjectileSpeed: projectileSpeedUpgrades++; break;
+            case (int)StatUpgrade.ProjectileSpeed: projectileSpeedUpgrades++; break;
         }
     }
+
     #region UpgradeValues
     //this shouldn't be serialized, that's for testing
     [SerializeField] int speedUpgrades;

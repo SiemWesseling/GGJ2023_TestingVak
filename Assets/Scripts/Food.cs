@@ -19,6 +19,7 @@ public class Food : MonoBehaviour
 
         if (food >= foodRequired)
         {
+            UpgradeManager.Instance.onLevelUp.Invoke();
             //Level up
             GameManager.Instance.pausingManager.PauseGame();
 
