@@ -10,7 +10,7 @@ public class HealthManager : MonoBehaviour
     [SerializeField] private Behaviour[] _behavioursToDisableOnDeath;
 
     [SerializeField] float startHealth = 100;
-    float maxHealth;
+    public float maxHealth;
     public float currentHealth { get; private set; }
 
     private void Start()

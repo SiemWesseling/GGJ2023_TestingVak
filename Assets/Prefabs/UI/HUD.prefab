@@ -761,6 +761,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthBar
       objectReference: {fileID: 0}
+    - target: {fileID: 5999899627908612509, guid: bda1eabe229b3af4eb7fac71a866fe40, type: 3}
+      propertyPath: healthManager
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5999899627908612509, guid: bda1eabe229b3af4eb7fac71a866fe40, type: 3}
+      propertyPath: maxHealthText
+      value: 
+      objectReference: {fileID: 9214379469358864060}
+    - target: {fileID: 5999899627908612509, guid: bda1eabe229b3af4eb7fac71a866fe40, type: 3}
+      propertyPath: currentHealthText
+      value: 
+      objectReference: {fileID: 205729878687824745}
     - target: {fileID: 6509245714802862931, guid: bda1eabe229b3af4eb7fac71a866fe40, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
