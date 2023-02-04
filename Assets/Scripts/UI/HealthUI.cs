@@ -15,7 +15,6 @@ public class HealthUI : MonoBehaviour
 
     void ChangeHealth(float currentHealth, float maxHealth)
     {
-        Debug.Log(" Pasta");
         healthSlider.value = currentHealth / maxHealth;
     }
 }

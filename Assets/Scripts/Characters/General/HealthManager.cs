@@ -73,7 +73,6 @@ public class HealthManager : MonoBehaviour
     //This function is being ran by the animator
     private void RunAfterDeathAnim()
     {
-        Debug.Log("Enemy died");
         onDeath.Invoke();
         Destroy(gameObject);
     }

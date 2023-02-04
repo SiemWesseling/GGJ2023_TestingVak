@@ -11,6 +11,8 @@ public class PlayerStats : MonoBehaviour
         ProjectileSpeed
     }
 
+    public upgrades upgrade;
+
     private static PlayerStats instance;
 
     public static PlayerStats Instance { get { return instance; } private set { instance = value; } }
@@ -20,18 +22,18 @@ public class PlayerStats : MonoBehaviour
         else { Debug.LogWarning("There seem to be multiple playerstats in the scene"); }
     }
 
-    void UpgradeValue(upgrades upgrade)
+    public void UpgradeValue(int upgrade)
     {
+        Debug.Log("DoUpgrade");
         switch (upgrade)
         {
-            case upgrades.Speed: speedUpgrades++; break;
+            case (int)upgrades.Speed: speedUpgrades++; break;
 
-            case upgrades.ProjectileSpeed: projectileSpeedUpgrades++; break;
+            case (int)upgrades.FireRate: fireRateUpgrades++; break;
 
-            case upgrades.FireRate: fireRateUpgrades++; break;
+            case (int)upgrades.ProjectileSpeed: projectileSpeedUpgrades++; break;
         }
     }
-
     #region UpgradeValues
     //this shouldn't be serialized, that's for testing
     [SerializeField] int speedUpgrades;
