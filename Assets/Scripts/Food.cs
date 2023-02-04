@@ -23,4 +23,12 @@ public class Food : MonoBehaviour
             GameManager.Instance.pausingManager.PauseGame();
         }
     }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            GameManager.Instance.pausingManager.UnPauseGame();
+        }
+    }
 }
