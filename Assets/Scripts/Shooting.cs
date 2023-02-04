@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    public ShootEvent onShoot = new ShootEvent();
+
     [SerializeField] private GameObject bullet;
     [SerializeField] private float shootingCooldown;
     //For upgrades
@@ -44,10 +46,12 @@ public class Shooting : MonoBehaviour
             direction.Normalize();
 
             // Creates the bullet locally
-            GameObject blt = Instantiate(bullet,transform.position + (Vector3)(direction * 0.5f),Quaternion.identity);
+            GameObject blt = Instantiate(bullet, transform.position + (Vector3)(direction * 0.5f), Quaternion.identity);
 
             // Adds velocity to the bullet
             blt.GetComponent<Rigidbody2D>().velocity = direction * upgradedBulletSpeed;
+
+            onShoot.Invoke(bullet, transform.position, direction * upgradedBulletSpeed);
 
             //Let the bullet face the right direction
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
