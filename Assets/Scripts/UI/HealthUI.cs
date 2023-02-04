@@ -23,7 +23,6 @@ public class HealthUI : MonoBehaviour
 
     void ChangeHealth(float currentHealth, float maxHealth)
     {
-        Debug.Log(" Pasta");
         healthSlider.value = currentHealth / maxHealth;
         currentHealthText.text = ((int)currentHealth).ToString();
         maxHealthText.text = ((int)maxHealth).ToString();

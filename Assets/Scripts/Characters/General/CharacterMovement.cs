@@ -5,13 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] private float acceleration, maxSpeed, descelleration;
+    [SerializeField] protected float acceleration, maxSpeed, descelleration;
     
-    [SerializeField] private Animator animator;
+    [SerializeField] protected Animator animator;
 
-    Rigidbody2D rb;
+    protected Rigidbody2D rb;
 
-    Vector2 direction;
+    protected Vector2 direction;
 
     void Start()
     {
@@ -33,7 +33,7 @@ public class CharacterMovement : MonoBehaviour
         DoMovement();
     }
 
-    private void DoMovement()
+    protected virtual void DoMovement()
     {
         if (direction == Vector2.zero)
         {
@@ -59,7 +59,7 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    void ApplyDescelleration()
+    protected virtual void ApplyDescelleration()
     {
         if (rb.velocity.magnitude != 0f) {
             rb.velocity -= rb.velocity.normalized *  0.01f * descelleration;
