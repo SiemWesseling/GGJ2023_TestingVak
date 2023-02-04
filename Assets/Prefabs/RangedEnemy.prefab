@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 2587662266243492799}
   - component: {fileID: 1256495432726077202}
   - component: {fileID: 8416640680282951443}
+  - component: {fileID: 6223403772369557588}
   m_Layer: 0
   m_Name: RangedEnemy
   m_TagString: Enemy
@@ -143,7 +144,7 @@ SpriteRenderer:
   m_SortingLayerID: 995173387
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1183793213, guid: 84cbbb4500337df4b9a0c2aa95da4e5f, type: 3}
+  m_Sprite: {fileID: -298639969, guid: 96ab631d58907b141925b158ef04556b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -246,9 +247,10 @@ MonoBehaviour:
   animator: {fileID: 0}
   _behavioursToDisableOnDeath:
   - {fileID: 8084490603896453006}
-  - {fileID: 0}
+  - {fileID: 8416640680282951443}
   - {fileID: 8084490603896453005}
   - {fileID: 8084490603896453010}
+  - {fileID: 6223403772369557588}
   startHealth: 100
   maxHealth: 0
   onDeath:
@@ -277,7 +279,7 @@ Animator:
   m_GameObject: {fileID: 8084490603896453011}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: db03b6f3c4b1c5846b9cfeee372fb3ce, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0496f30e4bd9aac409b30682cf1659f3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -308,3 +310,17 @@ MonoBehaviour:
   characterMovement: {fileID: 8084490603896453005}
   enemyMovement: {fileID: 8084490603896453006}
   bulletCooldown: 1
+  bulletSpeed: 10
+  enemyBulletPrefab: {fileID: 6576833986282684864, guid: b5cd8a12921179e4abb1e22a995938e8, type: 3}
+--- !u!114 &6223403772369557588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8084490603896453011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cdf2ef0db1a5b2419ac26b2979fd862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
