@@ -26,9 +26,6 @@ public class Food : MonoBehaviour
             
             food = 0;
             foodRequired = (int)(foodRequired * 1.25f);
-
-            Debug.Log(food);
-            Debug.Log(foodRequired);
         }
         
         //Change foodbar
