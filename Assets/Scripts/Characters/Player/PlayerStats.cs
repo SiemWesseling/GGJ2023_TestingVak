@@ -44,7 +44,7 @@ public class PlayerStats : MonoBehaviour
     float fireRateIncreasePerUpgrade = .1f;
     public float fireRateMult { get { return 1f + fireRateIncreasePerUpgrade * fireRateUpgrades; } }
 
-    float projectileSpeedUpgrades;
+    [SerializeField] float projectileSpeedUpgrades;
     float projectileSpeedIncreasePerUpgrade = .1f;
     public float ProjectileSpeedMult { get { return 1f + projectileSpeedIncreasePerUpgrade * projectileSpeedUpgrades; } }
     #endregion

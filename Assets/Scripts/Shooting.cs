@@ -6,9 +6,13 @@ public class Shooting : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
     [SerializeField] private float shootingCooldown;
+    //For upgrades
     float upgradedShootingCooldown { get { return shootingCooldown / PlayerStats.Instance.fireRateMult; } }
 
     [SerializeField] private float bulletSpeed;
+    //For upgrades
+    float upgradedBulletSpeed { get { return bulletSpeed * PlayerStats.Instance.ProjectileSpeedMult; } }
+
     private float timer = 0;
     private bool playerCanShoot = true;
 
@@ -43,7 +47,7 @@ public class Shooting : MonoBehaviour
             GameObject blt = Instantiate(bullet,transform.position + (Vector3)(direction * 0.5f),Quaternion.identity);
 
             // Adds velocity to the bullet
-            blt.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+            blt.GetComponent<Rigidbody2D>().velocity = direction * upgradedBulletSpeed;
 
             //Let the bullet face the right direction
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
