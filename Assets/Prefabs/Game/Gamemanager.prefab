@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3572900123369258122}
   - component: {fileID: 8880124575467817702}
   - component: {fileID: 3509676279053013283}
+  - component: {fileID: 8690584307722128341}
   m_Layer: 0
   m_Name: Gamemanager
   m_TagString: Untagged
@@ -74,7 +75,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6de529aedd74c5246871b2acecbbd7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgrade: 0
   speedUpgrades: 0
   fireRateUpgrades: 0
   projectileSpeedUpgrades: 0
+--- !u!114 &8690584307722128341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3572900123369258116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc2ac9446675084eb46b9f4e17e2fa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: EnemyDeath
+    clip: {fileID: 8300000, guid: a7e54c5b6de0b2f4ea2cb77820fea348, type: 3}
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}

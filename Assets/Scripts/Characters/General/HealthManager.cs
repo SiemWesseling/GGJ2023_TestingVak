@@ -10,6 +10,7 @@ public class HealthManager : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private Behaviour[] _behavioursToDisableOnDeath;
     [SerializeField] private PlayerDiesAnim playerDiesAnim;
+    [SerializeField] private string deathSoundName;
 
     [SerializeField] float startHealth = 100;
     public float maxHealth;
@@ -18,7 +19,7 @@ public class HealthManager : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
-        
+
         currentHealth = startHealth;
         maxHealth = startHealth;
         onLostHealth.AddListener(LoseHealth);
@@ -47,7 +48,7 @@ public class HealthManager : MonoBehaviour
         }
         UpdateHealth();
     }
-    
+
     /// <summary>
     /// Don't call this, rather the event related to it. 
     /// </summary>
@@ -64,11 +65,11 @@ public class HealthManager : MonoBehaviour
         if (gameObject.tag != "Player")
         {
             animator.SetTrigger("enemyDies");
-            foreach(Behaviour behaviour in _behavioursToDisableOnDeath)
+            foreach (Behaviour behaviour in _behavioursToDisableOnDeath)
             {
                 behaviour.enabled = false;
             }
-            
+
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
         else
@@ -76,15 +77,17 @@ public class HealthManager : MonoBehaviour
             if (playerDiesAnim != null)
             {
                 playerDiesAnim.StartDeathAnim();
-                foreach(Behaviour behaviour in _behavioursToDisableOnDeath)
+                foreach (Behaviour behaviour in _behavioursToDisableOnDeath)
                 {
                     behaviour.enabled = false;
                 }
-            
+
                 GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             }
 
         }
+
+        AudioManager.Instance?.PlaySound(deathSoundName);
     }
 
     //This function is being ran by the animator
