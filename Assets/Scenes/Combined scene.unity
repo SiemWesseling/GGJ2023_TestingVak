@@ -623,7 +623,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 114786981, guid: 47f522208a5e95a41857f39f33180c5b, type: 3}
       propertyPath: food
-      value: 0
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 114786981, guid: 47f522208a5e95a41857f39f33180c5b, type: 3}
       propertyPath: foodBar
@@ -1098,6 +1098,14 @@ PrefabInstance:
       propertyPath: healthManager
       value: 
       objectReference: {fileID: 114786973}
+    - target: {fileID: 6758674305161450651, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -835.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6758674305161450651, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7589608497761591772, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
       propertyPath: m_Value
       value: 0.971
