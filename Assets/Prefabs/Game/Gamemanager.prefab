@@ -52,6 +52,7 @@ MonoBehaviour:
   paused: 0
   pausingManager: {fileID: 8880124575467817702}
   mutationUI: {fileID: 0}
+  wave: 0
 --- !u!114 &8880124575467817702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,6 +80,8 @@ MonoBehaviour:
   speedUpgrades: 0
   fireRateUpgrades: 0
   projectileSpeedUpgrades: 0
+  projectileSizeUpgrades: 0
+  bulletDamage: 0
 --- !u!114 &8690584307722128341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,9 +96,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: EnemyDeath
-    clip: {fileID: 8300000, guid: a7e54c5b6de0b2f4ea2cb77820fea348, type: 3}
+    clip: {fileID: 8300000, guid: 08eeede871ea7754aa57aff1816c8762, type: 3}
     volume: 1
     pitch: 1
+    audioSource: {fileID: 0}
+  - name: Upgrade
+    clip: {fileID: 8300000, guid: 32d50daa67baea5459cd9d4658b6fe76, type: 3}
+    volume: 0.5
+    pitch: 1
+    audioSource: {fileID: 0}
+  - name: Shoot
+    clip: {fileID: 8300000, guid: 7e7b9933a94dc5f49b421f6db109de31, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - name: EnemyShoot
+    clip: {fileID: 8300000, guid: 7e7b9933a94dc5f49b421f6db109de31, type: 3}
+    volume: 0.5
+    pitch: 0.1
+    audioSource: {fileID: 0}
+  - name: Pickup
+    clip: {fileID: 8300000, guid: 1d6c46d03863852428fdfab74a5b7722, type: 3}
+    volume: 0.5
+    pitch: 0.1
     audioSource: {fileID: 0}
 --- !u!114 &3833293079268998851
 MonoBehaviour:
@@ -112,12 +135,12 @@ MonoBehaviour:
   musicStart:
     name: 
     clip: {fileID: 8300000, guid: 2f4cef71c3c75c245a559b765786d7bb, type: 3}
-    volume: 1
+    volume: 0.3
     pitch: 1
     audioSource: {fileID: 0}
   musicLoop:
     name: 
     clip: {fileID: 8300000, guid: 2a8da6bc23d366d43b5da62f5306c954, type: 3}
-    volume: 1
+    volume: 0.3
     pitch: 1
     audioSource: {fileID: 0}

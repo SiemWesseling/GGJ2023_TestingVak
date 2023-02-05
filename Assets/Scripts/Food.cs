@@ -8,7 +8,8 @@ public class Food : MonoBehaviour
     public int foodRequired = 20;
 
     [SerializeField] private FoodUI foodBar;
-
+    [SerializeField] string upgradeSound;
+    [SerializeField] string eatFoodSound;
     private void Start()
     {
         foodBar.UpdateBar(food, foodRequired);
@@ -23,11 +24,11 @@ public class Food : MonoBehaviour
             UpgradeManager.Instance.onLevelUp.Invoke();
             //Level up
             GameManager.Instance.pausingManager.PauseGame();
-            
+            AudioManager.Instance.PlaySound(upgradeSound);
             food = 0;
             foodRequired = (int)(foodRequired * 1.25f);
         }
-        
+        AudioManager.Instance.PlaySound(eatFoodSound);
         //Change foodbar
         foodBar.UpdateBar(food, foodRequired);
     }

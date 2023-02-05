@@ -69,7 +69,7 @@ public class CameraShake : MonoBehaviour
     float currentIntensity;
     Vector3 lastOffset;
     void DynamicCameraShake()
-    { 
+    {
         if (currentIntensity > 0)
         {
             Vector3 offset = RandomOffset(currentIntensity);
@@ -81,6 +81,11 @@ public class CameraShake : MonoBehaviour
 
     }
 
-    public void StartDynamicCameraShake(float intensity) { currentIntensity += intensity; }
+
+    public void StartDynamicCameraShake(float intensity)
+    {
+        currentIntensity += intensity;
+        if (intensity > 2f) { intensity = 2f; }
+    }
     public void StartDynamicCameraShake() { currentIntensity += standardShakeIntensity; }
 }

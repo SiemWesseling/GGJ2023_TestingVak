@@ -253,7 +253,7 @@ MonoBehaviour:
   - {fileID: 8084490603896453010}
   - {fileID: 6223403772369557588}
   playerDiesAnim: {fileID: 0}
-  deathSoundName: 
+  deathSoundName: EnemyDeath
   startHealth: 100
   maxHealth: 0
   onDeath:

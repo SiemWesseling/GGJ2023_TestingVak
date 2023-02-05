@@ -25,8 +25,8 @@ public class AudioManager : MonoBehaviour
         {
             sounds[i].audioSource = transform.AddComponent<AudioSource>();
             sounds[i].audioSource.clip = sounds[i].clip;
-            sounds[i].volume = sounds[i].volume;
-            sounds[i].pitch = sounds[i].pitch;
+            sounds[i].audioSource.volume = sounds[i].volume;
+            sounds[i].audioSource.pitch = sounds[i].pitch;
         }
         initialized = true;
     }

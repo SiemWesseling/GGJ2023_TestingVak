@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    [SerializeField] string shootSound;
     public ShootEvent onShoot = new ShootEvent();
 
     [SerializeField] private GameObject bullet;
@@ -65,6 +66,8 @@ public class Shooting : MonoBehaviour
             //Reset cooldown
             playerCanShoot = false;
             timer = 0;
+            Debug.Log("play shoot");
+            AudioManager.Instance.PlaySound(shootSound);
         }
     }
 }

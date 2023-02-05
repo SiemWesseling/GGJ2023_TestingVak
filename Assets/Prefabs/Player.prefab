@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e554201b6bedb54eb02aec45434927e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootSound: Shoot
   bullet: {fileID: 4972724380384317805, guid: a6e2182d6a6f3bb47ba0ec746b2717d9, type: 3}
   shootingCooldown: 0.5
   bulletSpeed: 15
@@ -182,9 +183,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bf3fc7ec802b514c8facb2d3c3c4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: 0
-  foodRequired: 20
+  food: 9
+  foodRequired: 10
   foodBar: {fileID: 0}
+  upgradeSound: Upgrade
 --- !u!114 &2302172079260323134
 MonoBehaviour:
   m_ObjectHideFlags: 0
