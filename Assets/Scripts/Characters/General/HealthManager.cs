@@ -12,7 +12,7 @@ public class HealthManager : MonoBehaviour
     [SerializeField] private PlayerDiesAnim playerDiesAnim;
     [SerializeField] private string deathSoundName;
 
-    [SerializeField] float startHealth = 100;
+    [SerializeField] public float startHealth = 100;
     public float maxHealth;
     public float currentHealth { get; private set; }
 

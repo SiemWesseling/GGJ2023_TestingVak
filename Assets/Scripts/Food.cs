@@ -16,8 +16,10 @@ public class Food : MonoBehaviour
 
     public void AddFood()
     {
-        food++;
-
+        food += (int)(GameManager.Instance.wave);
+        
+        Debug.Log(food);
+        
         if (food >= foodRequired)
         {
             UpgradeManager.Instance.onLevelUp.Invoke();
