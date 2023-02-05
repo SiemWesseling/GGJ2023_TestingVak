@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Bullet
+  m_Name: Enemy Bullet
   m_Shader: {fileID: -6465566751694194690, guid: 9d5aa82eb3f595c439e151e5689bd23d, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -39,5 +39,5 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _Color: {r: 2.758805, g: 0.11711903, b: 0.36444956, a: 1}
+    - _Color: {r: 0.17380863, g: 0.56005, b: 4.9245777, a: 1}
   m_BuildTextureStacks: []

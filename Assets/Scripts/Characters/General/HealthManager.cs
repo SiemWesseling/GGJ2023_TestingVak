@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private Behaviour[] _behavioursToDisableOnDeath;
+    [SerializeField] private PlayerDiesAnim playerDiesAnim;
 
     [SerializeField] float startHealth = 100;
     public float maxHealth;
@@ -68,6 +70,20 @@ public class HealthManager : MonoBehaviour
             }
             
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
+        else
+        {
+            if (playerDiesAnim != null)
+            {
+                playerDiesAnim.StartDeathAnim();
+                foreach(Behaviour behaviour in _behavioursToDisableOnDeath)
+                {
+                    behaviour.enabled = false;
+                }
+            
+                GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            }
+
         }
     }
 
