@@ -728,6 +728,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce1d6c174b23814aac58c00f7a446a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amountOfEnemiesPerWave: 10
+  EnemySpawner: {fileID: 1824639182}
+  waveTimer: 3
+  amountOfEnemiesLeftBeforeNewSpawn: 2
+  spawnTimer: 0.25
 --- !u!4 &1824639184
 Transform:
   m_ObjectHideFlags: 0
@@ -755,5 +760,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7268bfebd5effd24e98b695804a76abf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceFromPlayer: 0
-  Enemy: {fileID: 5907998364154924864, guid: 82d511b8900da884aa2b574b37bb1da6, type: 3}
+  distanceFromPlayer: 50
+  Enemy:
+  - {fileID: 5907998364154924864, guid: 82d511b8900da884aa2b574b37bb1da6, type: 3}
+  - {fileID: 5907998364154924864, guid: 82d511b8900da884aa2b574b37bb1da6, type: 3}
+  - {fileID: 5907998364154924864, guid: 82d511b8900da884aa2b574b37bb1da6, type: 3}
+  - {fileID: 5907998364154924864, guid: 82d511b8900da884aa2b574b37bb1da6, type: 3}
+  enemyWavesSpawner: {fileID: 1824639183}
