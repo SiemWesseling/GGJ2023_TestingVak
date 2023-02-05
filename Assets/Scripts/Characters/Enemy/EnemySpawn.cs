@@ -11,6 +11,8 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] private GameObject[] Enemy;
 
     [SerializeField] private EnemyWavesSpawner enemyWavesSpawner;
+
+    [SerializeField] private float healthGainedPerWave = 33f;
  
     private GameObject SpawnedEnemy;
 
@@ -30,7 +32,7 @@ public class EnemySpawn : MonoBehaviour
         GameObject enemy = Instantiate(SpawnedEnemy, SpawnPosition, Quaternion.identity, enemyWavesSpawner.transform);
         
         HealthManager enemyHealth = enemy.GetComponent<HealthManager>();
-        float extraHealth = GameManager.Instance.wave * 50;
+        float extraHealth = GameManager.Instance.wave * healthGainedPerWave;
         enemyHealth.startHealth += extraHealth;
     }
 }
