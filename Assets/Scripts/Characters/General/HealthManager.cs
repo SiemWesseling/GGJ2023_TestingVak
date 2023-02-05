@@ -45,6 +45,7 @@ public class HealthManager : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+            currentHealth = 0;
         }
         UpdateHealth();
     }
