@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] float damage = 100f;
+    [SerializeField] public float damage = 100f;
     [SerializeField] string[] damageTheseTags;
     [SerializeField] bool destroyOnHit;
 
@@ -18,6 +18,7 @@ public class Bullet : MonoBehaviour
         {
             StartCoroutine(DestroyInSeconds(destroyInTime));
         }
+        damage += (PlayerStats.Instance.bulletDamage * 10);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

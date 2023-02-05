@@ -623,7 +623,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 114786981, guid: 47f522208a5e95a41857f39f33180c5b, type: 3}
       propertyPath: food
-      value: 0
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 114786981, guid: 47f522208a5e95a41857f39f33180c5b, type: 3}
       propertyPath: foodBar
@@ -1648,6 +1648,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5768245527149041159, guid: 4b793d39e58e6444fa566aaa3d92cb89, type: 3}
+      propertyPath: availableUpgrades.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5768245527149041159, guid: 4b793d39e58e6444fa566aaa3d92cb89, type: 3}
+      propertyPath: availableUpgrades.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 164d45d032131c74ca44f5f92b3d9e8d, type: 2}
     - target: {fileID: 6400007121519282585, guid: 4b793d39e58e6444fa566aaa3d92cb89, type: 3}
       propertyPath: m_Color.b
       value: 1

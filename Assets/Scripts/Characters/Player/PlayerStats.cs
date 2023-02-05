@@ -8,7 +8,8 @@ public class PlayerStats : MonoBehaviour
     {
         Speed,
         FireRate,
-        ProjectileSpeed
+        ProjectileSpeed,
+        BulletDamage
     }
 
     private static PlayerStats instance;
@@ -32,6 +33,8 @@ public class PlayerStats : MonoBehaviour
             case (int)StatUpgrade.FireRate: fireRateUpgrades++; break;
 
             case (int)StatUpgrade.ProjectileSpeed: projectileSpeedUpgrades++; break;
+            
+            case (int)StatUpgrade.BulletDamage: bulletDamage++; break;
         }
     }
 
@@ -50,5 +53,8 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] float projectileSpeedUpgrades;
     float projectileSpeedIncreasePerUpgrade = .1f;
     public float ProjectileSpeedMult { get { return 1f + projectileSpeedIncreasePerUpgrade * projectileSpeedUpgrades; } }
+
+    [SerializeField] public float bulletDamage;
+
     #endregion
 }
