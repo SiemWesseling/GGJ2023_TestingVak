@@ -34,4 +34,5 @@ public class GameManager : MonoBehaviour
     public bool paused = false;
     public PausingManager pausingManager;
     public GameObject mutationUI;
+    public int wave;
 }

@@ -47,6 +47,7 @@ public class EnemyWavesSpawner : MonoBehaviour
             {
                 if (!coRoutineHasStarted)
                 {
+                    GameManager.Instance.wave++;
                     StartCoroutine(SpawnEnemies());
                 }
 
