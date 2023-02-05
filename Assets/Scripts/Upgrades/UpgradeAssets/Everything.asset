@@ -15,4 +15,4 @@ MonoBehaviour:
   upgradeName: Base stats
   description: Upgrade all base stats
   addThis: 0
-  baseStatUpgrade: 000000000100000002000000
+  baseStatUpgrade: 000000000100000002000000030000000400000004000000

@@ -15,4 +15,4 @@ MonoBehaviour:
   upgradeName: Bullet speed
   description: Bullets go faster
   addThis: 0
-  baseStatUpgrade: 02000000
+  baseStatUpgrade: 020000000200000002000000

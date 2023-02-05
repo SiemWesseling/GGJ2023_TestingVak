@@ -9,7 +9,8 @@ public class PlayerStats : MonoBehaviour
         Speed,
         FireRate,
         ProjectileSpeed,
-        BulletDamage
+        ProjectileSize,
+        BulletDamage,
     }
 
     private static PlayerStats instance;
@@ -35,24 +36,30 @@ public class PlayerStats : MonoBehaviour
             case (int)StatUpgrade.ProjectileSpeed: projectileSpeedUpgrades++; break;
             
             case (int)StatUpgrade.BulletDamage: bulletDamage++; break;
+
+            case (int)StatUpgrade.ProjectileSize: projectileSizeUpgrades++; break;
         }
     }
 
     #region UpgradeValues
     //this shouldn't be serialized, that's for testing
     [SerializeField] int speedUpgrades;
-    float speedIncreasePerUpgrade = .1f;
+    float speedIncreasePerUpgrade = .2f;
 
     public float speedMult { get { return 1f + speedIncreasePerUpgrade * speedUpgrades; } }
 
 
     [SerializeField] int fireRateUpgrades;
-    float fireRateIncreasePerUpgrade = .1f;
+    float fireRateIncreasePerUpgrade = .2f;
     public float fireRateMult { get { return 1f + fireRateIncreasePerUpgrade * fireRateUpgrades; } }
 
     [SerializeField] float projectileSpeedUpgrades;
-    float projectileSpeedIncreasePerUpgrade = .1f;
+    float projectileSpeedIncreasePerUpgrade = .2f;
     public float ProjectileSpeedMult { get { return 1f + projectileSpeedIncreasePerUpgrade * projectileSpeedUpgrades; } }
+
+    [SerializeField] float projectileSizeUpgrades;
+    float projectileSizeIncreasePerUpgrade = .2f;
+    public float ProjectileSizeMult { get { return 1f + projectileSizeIncreasePerUpgrade * projectileSizeUpgrades; } }
 
     [SerializeField] public float bulletDamage;
 

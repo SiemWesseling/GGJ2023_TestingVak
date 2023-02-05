@@ -15,4 +15,4 @@ MonoBehaviour:
   upgradeName: Bullet Damage
   description: Stronger Bullets
   addThis: 0
-  baseStatUpgrade: 03000000
+  baseStatUpgrade: 030000000300000003000000

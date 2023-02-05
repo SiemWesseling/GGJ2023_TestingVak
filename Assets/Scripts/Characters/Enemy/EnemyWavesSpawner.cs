@@ -26,6 +26,8 @@ public class EnemyWavesSpawner : MonoBehaviour
 
     private bool coRoutineHasStarted;
 
+    [SerializeField] int waveAmountEscalation;
+
     private void Start()
     {
         enemySpawn = GetComponent<EnemySpawn>();
@@ -60,7 +62,7 @@ public class EnemyWavesSpawner : MonoBehaviour
     {
         coRoutineHasStarted = true;
 
-        for(int i = 0; i < amountOfEnemiesPerWave; i++)
+        for (int i = 0; i < amountOfEnemiesPerWave + waveAmountEscalation * GameManager.Instance.wave; i++)
         {
 
             enemySpawn.SpawnEnemy();

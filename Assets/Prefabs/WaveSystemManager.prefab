@@ -45,11 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce1d6c174b23814aac58c00f7a446a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountOfEnemiesPerWave: 10
+  amountOfEnemiesPerWave: 3
   EnemySpawner: {fileID: 2078927221923088498}
   waveTimer: 35.8
   amountOfEnemiesLeftBeforeNewSpawn: 2
   spawnTimer: 0.25
+  waveAmountEscalation: 4
 --- !u!114 &2078927221923088493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,3 +70,4 @@ MonoBehaviour:
   - {fileID: 5907998364154924864, guid: 82d511b8900da884aa2b574b37bb1da6, type: 3}
   - {fileID: 5907998364154924864, guid: 82d511b8900da884aa2b574b37bb1da6, type: 3}
   enemyWavesSpawner: {fileID: 2078927221923088499}
+  healthGainedPerWave: 33

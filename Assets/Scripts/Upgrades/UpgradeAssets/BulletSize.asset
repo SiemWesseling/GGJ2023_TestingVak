@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1de0233783e6e6545bd6c03141a01a6d, type: 3}
-  m_Name: SpeedUpgrade 1
+  m_Name: BulletSize
   m_EditorClassIdentifier: 
-  upgradeName: Speed
-  description: Move slightly faster
+  upgradeName: Bullet Size
+  description: Makes your bullets bigger
   addThis: 0
-  baseStatUpgrade: 000000000000000000000000
+  baseStatUpgrade: 03000000030000000300000004000000

@@ -12,13 +12,15 @@ public class Bullet : MonoBehaviour
     [Tooltip("Keep this zero and it won't be destroyed. ")]
     [SerializeField] float destroyInTime;
 
+    float upgradedBulletSize { get { return 1f * PlayerStats.Instance.ProjectileSizeMult; } }
+
+
     private void Start()
     {
         if (destroyInTime > 0)
         {
             StartCoroutine(DestroyInSeconds(destroyInTime));
         }
-        damage += (PlayerStats.Instance.bulletDamage * 10);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

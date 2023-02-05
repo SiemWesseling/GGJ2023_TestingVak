@@ -10,6 +10,7 @@ public class Shooting : MonoBehaviour
     [SerializeField] private float shootingCooldown;
     //For upgrades
     float upgradedShootingCooldown { get { return shootingCooldown / PlayerStats.Instance.fireRateMult; } }
+    
 
     [SerializeField] private float bulletSpeed;
     //For upgrades
@@ -57,6 +58,10 @@ public class Shooting : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             blt.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
 
+            Bullet bulletScript = blt.GetComponent<Bullet>();
+            bulletScript.transform.localScale *= PlayerStats.Instance.ProjectileSizeMult;
+            bulletScript.damage += 10f * PlayerStats.Instance.bulletDamage;
+            
             //Reset cooldown
             playerCanShoot = false;
             timer = 0;
