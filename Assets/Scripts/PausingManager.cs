@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class PausingManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private static PausingManager instance;
+    public static PausingManager Instance
     {
-
+        get { return instance; }
+        private set { instance = value; }
+    }
+    // Start is called before the first frame update
+    void Awake()
+    {
+        instance = this;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void PauseGame()
