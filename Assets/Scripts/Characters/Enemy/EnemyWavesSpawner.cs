@@ -61,7 +61,9 @@ public class EnemyWavesSpawner : MonoBehaviour
 
         for(int i = 0; i < amountOfEnemiesPerWave; i++)
         {
+
             enemySpawn.SpawnEnemy();
+
             yield return new WaitForSeconds(spawnTimer);
         }
 

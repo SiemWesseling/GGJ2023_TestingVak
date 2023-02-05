@@ -596,6 +596,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 3598702919695848062, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3598702919695848063, guid: f0af790669dff3647b3ffbb0fd08e341, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -730,7 +734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountOfEnemiesPerWave: 10
   EnemySpawner: {fileID: 1824639182}
-  waveTimer: 3
+  waveTimer: 35.8
   amountOfEnemiesLeftBeforeNewSpawn: 2
   spawnTimer: 0.25
 --- !u!4 &1824639184
@@ -760,7 +764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7268bfebd5effd24e98b695804a76abf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceFromPlayer: 50
+  distanceFromPlayer: 10
   Enemy:
   - {fileID: 5907998364154924864, guid: 82d511b8900da884aa2b574b37bb1da6, type: 3}
   - {fileID: 5907998364154924864, guid: 82d511b8900da884aa2b574b37bb1da6, type: 3}
