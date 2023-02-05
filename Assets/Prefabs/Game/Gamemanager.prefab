@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8880124575467817702}
   - component: {fileID: 3509676279053013283}
   - component: {fileID: 8690584307722128341}
+  - component: {fileID: 3833293079268998851}
   m_Layer: 0
   m_Name: Gamemanager
   m_TagString: Untagged
@@ -93,6 +94,30 @@ MonoBehaviour:
   sounds:
   - name: EnemyDeath
     clip: {fileID: 8300000, guid: a7e54c5b6de0b2f4ea2cb77820fea348, type: 3}
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+--- !u!114 &3833293079268998851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3572900123369258116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94b611a20a330c241bdf35172df086e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicStart:
+    name: 
+    clip: {fileID: 8300000, guid: 2f4cef71c3c75c245a559b765786d7bb, type: 3}
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  musicLoop:
+    name: 
+    clip: {fileID: 8300000, guid: 2a8da6bc23d366d43b5da62f5306c954, type: 3}
     volume: 1
     pitch: 1
     audioSource: {fileID: 0}
