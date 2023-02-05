@@ -623,12 +623,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 114786981, guid: 47f522208a5e95a41857f39f33180c5b, type: 3}
       propertyPath: food
-      value: 19
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114786981, guid: 47f522208a5e95a41857f39f33180c5b, type: 3}
       propertyPath: foodBar
       value: 
       objectReference: {fileID: 600878525}
+    - target: {fileID: 114786981, guid: 47f522208a5e95a41857f39f33180c5b, type: 3}
+      propertyPath: foodRequired
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3378192029330328160, guid: 47f522208a5e95a41857f39f33180c5b, type: 3}
       propertyPath: m_SortingLayer
       value: 1
