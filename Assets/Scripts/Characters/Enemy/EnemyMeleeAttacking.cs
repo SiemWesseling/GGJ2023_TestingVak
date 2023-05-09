@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.UI;
+using Unity.Services.Analytics;
+using Unity.Services.Core;
 
 public class EnemyMeleeAttacking : MonoBehaviour
 {
@@ -12,6 +14,18 @@ public class EnemyMeleeAttacking : MonoBehaviour
     private float timer = 0;
     private bool enemyCanAttack = true;
 
+    private void Start()
+    {
+        TestingConnect.AnalitycsInitializedSucces += (object sender, EventArgs e) =>
+        {
+            Debug.Log("Analytics Connected");
+            MeleeAttack();
+        };
+    }
+    private void MeleeAttack()
+    {
+        AnalyticsService.Instance.CustomData("GotHitFromVirus", new Dictionary<string, object> { { "TotalHitsFromVirus", 0 } });
+    }
     private void FixedUpdate()
     {
         //Timer
