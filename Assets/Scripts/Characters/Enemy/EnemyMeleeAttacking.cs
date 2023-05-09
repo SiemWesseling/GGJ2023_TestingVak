@@ -19,12 +19,17 @@ public class EnemyMeleeAttacking : MonoBehaviour
         TestingConnect.AnalitycsInitializedSucces += (object sender, EventArgs e) =>
         {
             Debug.Log("Analytics Connected");
-            MeleeAttack();
+            MeleeAttackTestData();
         };
     }
-    private void MeleeAttack()
+    private void MeleeAttackTestData()
     {
         AnalyticsService.Instance.CustomData("GotHitFromVirus", new Dictionary<string, object> { { "TotalHitsFromVirus", 0 } });
+
+        if(TestingConnect.IsInitialized == true)
+        {
+            
+        }
     }
     private void FixedUpdate()
     {
