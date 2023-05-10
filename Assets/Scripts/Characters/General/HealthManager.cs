@@ -15,7 +15,9 @@ public class HealthManager : MonoBehaviour
     public float maxHealth;
     public float currentHealth { get; private set; }
 
-    private int hitsTaken;
+    private int playerHits;
+    private int enemyHits;
+
     private void Start()
     {
         //TestingConnect.AnalitycsInitializedSucces += OnAnalyticsInitializedSucces;
@@ -52,7 +54,11 @@ public class HealthManager : MonoBehaviour
         // Now you can log events to the Analytics service
         AnalyticsService.Instance.CustomData("PlayerGetsHit", new Dictionary<string, object> {
             { "SceneName", SceneManager.GetActiveScene().name },
-            { "PlayerHit", hitsTaken }
+            { "PlayerHit", playerHits }
+        });
+        AnalyticsService.Instance.CustomData("PlayerAccuracy", new Dictionary<string, object> {
+            { "SceneName", SceneManager.GetActiveScene().name },
+            { "EnemyHit", enemyHits }
         });
         AnalyticsService.Instance.Flush();
     }
@@ -67,8 +73,10 @@ public class HealthManager : MonoBehaviour
             OnAnalyticsInitializedSucces();
         }
 
-        hitsTaken++;
- 
+        if (gameObject.tag == "Player") { playerHits++; }
+
+        else if (gameObject.tag == "Enemy") { enemyHits++; }
+
         UpdateHealth();
     }
 
