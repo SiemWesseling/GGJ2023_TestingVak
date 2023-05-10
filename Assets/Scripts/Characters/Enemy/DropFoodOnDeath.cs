@@ -1,10 +1,14 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+using Unity.Services.Analytics;
+using Unity.Services.Core;
 
 [RequireComponent(typeof(HealthManager))]
 public class DropFoodOnDeath : MonoBehaviour
 {
+    private int amountOfFoodDropped;
     HealthManager healthManager;
     [SerializeField] GameObject foodPrefab;
 
@@ -18,6 +22,22 @@ public class DropFoodOnDeath : MonoBehaviour
     {
         var newFood = Instantiate(foodPrefab);
         newFood.transform.position = transform.position;
+
+        amountOfFoodDropped++;
+        OnAnalyticsInitializedSucces();
     }
 
+    private void OnAnalyticsInitializedSucces()
+    {
+        //// Unsubscribe from the event
+        //TestingConnect.AnalitycsInitializedSucces -= OnAnalyticsInitializedSucces;
+        Debug.Log("Sending getshit event");
+
+        // Now you can log events to the Analytics service
+        AnalyticsService.Instance.CustomData("redBloodCellsDropped", new Dictionary<string, object> {
+            { "SceneName", SceneManager.GetActiveScene().name },
+            { "amountOfRedBloodCellsDropped", amountOfFoodDropped }
+        });
+        AnalyticsService.Instance.Flush();
+    }
 }
