@@ -35,7 +35,7 @@ public class DropFoodOnDeath : MonoBehaviour
 
         // Now you can log events to the Analytics service
         AnalyticsService.Instance.CustomData("redBloodCellsDropped", new Dictionary<string, object> {
-            { "amountOfRedBloodCellsDropped", amountOfFoodDropped }
+            { "totalRedBloodCellsDropped", amountOfFoodDropped }
         });
         AnalyticsService.Instance.Flush();
     }
