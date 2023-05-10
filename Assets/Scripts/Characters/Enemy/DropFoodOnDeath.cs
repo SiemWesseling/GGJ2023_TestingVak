@@ -31,7 +31,7 @@ public class DropFoodOnDeath : MonoBehaviour
     {
         //// Unsubscribe from the event
         //TestingConnect.AnalitycsInitializedSucces -= OnAnalyticsInitializedSucces;
-        Debug.Log("Sending getshit event");
+        Debug.Log("Sending dropping bloodcell event");
 
         // Now you can log events to the Analytics service
         AnalyticsService.Instance.CustomData("redBloodCellsDropped", new Dictionary<string, object> {

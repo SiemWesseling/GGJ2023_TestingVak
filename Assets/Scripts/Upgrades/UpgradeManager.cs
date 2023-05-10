@@ -77,7 +77,7 @@ public class UpgradeManager : MonoBehaviour
     {
         //// Unsubscribe from the event
         //TestingConnect.AnalitycsInitializedSucces -= OnAnalyticsInitializedSucces;
-        Debug.Log("Sending getshit event");
+        Debug.Log("Sending player gets an upgrade event");
 
         // Now you can log events to the Analytics service
         AnalyticsService.Instance.CustomData("amountOfUpgradesGotten", new Dictionary<string, object> {
