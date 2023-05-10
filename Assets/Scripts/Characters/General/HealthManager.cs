@@ -13,6 +13,8 @@ public class HealthManager : MonoBehaviour
 
     [SerializeField] public float startHealth = 100;
     public float maxHealth;
+
+    private TimerUI RoboRally;
     public float currentHealth { get; private set; }
 
     private int hitsTaken;
@@ -45,16 +47,17 @@ public class HealthManager : MonoBehaviour
 
     private void OnAnalyticsInitializedSucces()
     {
-        //// Unsubscribe from the event
-        //TestingConnect.AnalitycsInitializedSucces -= OnAnalyticsInitializedSucces;
-        Debug.Log("Sending getshit event");
-
+        
         // Now you can log events to the Analytics service
         AnalyticsService.Instance.CustomData("PlayerGetsHit", new Dictionary<string, object> {
-            { "SceneName", SceneManager.GetActiveScene().name },
             { "PlayerHit", hitsTaken }
         });
         AnalyticsService.Instance.Flush();
+
+        AnalyticsService.Instance.CustomData("SurvivalTime", new Dictionary<string, object> {
+            { "TimeSurvived", RoboRally.timer }
+        });
+
     }
 
     void LoseHealth(float amountLost)

@@ -9,7 +9,7 @@ public class TimerUI : MonoBehaviour
 {
     
     [SerializeField] private TextMeshProUGUI timerText;
-    private float timer = 0;
+    public float timer = 0;
 
     private void Start()
     {
