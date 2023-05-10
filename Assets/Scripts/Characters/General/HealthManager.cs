@@ -1,10 +1,9 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-
+using Unity.Services.Analytics;
+using Unity.Services.Core;
 public class HealthManager : MonoBehaviour
 {
     [SerializeField] private Animator animator;
@@ -16,8 +15,12 @@ public class HealthManager : MonoBehaviour
     public float maxHealth;
     public float currentHealth { get; private set; }
 
+    private int hitsTaken;
     private void Start()
     {
+        UnityServices.InitializeAsync();
+        //TestingConnect.AnalitycsInitializedSucces += OnAnalyticsInitializedSucces;
+
         animator = GetComponent<Animator>();
 
         currentHealth = startHealth;
@@ -39,6 +42,21 @@ public class HealthManager : MonoBehaviour
     /// <summary>
     /// Don't call this, rather the event related to it. 
     /// </summary>
+    /// 
+
+    private void OnAnalyticsInitializedSucces()
+    {
+        //// Unsubscribe from the event
+        //TestingConnect.AnalitycsInitializedSucces -= OnAnalyticsInitializedSucces;
+        Debug.Log("Sending getshit event");
+
+        // Now you can log events to the Analytics service
+        AnalyticsService.Instance.CustomData("PlayerGetsHit", new Dictionary<string, object> {
+            { "SceneName", SceneManager.GetActiveScene().name },
+            { "PlayerHit", hitsTaken }
+        });
+    }
+
     void LoseHealth(float amountLost)
     {
         currentHealth -= amountLost;
@@ -46,7 +64,11 @@ public class HealthManager : MonoBehaviour
         {
             Die();
             currentHealth = 0;
+            OnAnalyticsInitializedSucces();
         }
+
+        hitsTaken++;
+ 
         UpdateHealth();
     }
 
@@ -102,7 +124,6 @@ public class HealthManager : MonoBehaviour
     {
         onHealthChanged.Invoke(currentHealth, maxHealth);
     }
-
     private void OnDestroy()
     {
         onLostHealth.RemoveListener(LoseHealth);
