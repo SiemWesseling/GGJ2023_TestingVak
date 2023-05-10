@@ -26,7 +26,7 @@ public class EnemyMeleeAttacking : MonoBehaviour
     {
         AnalyticsService.Instance.CustomData("GotHitFromVirus", new Dictionary<string, object> { { "TotalHitsFromVirus", 0 } });
 
-        if(TestingConnect.IsInitialized == true)
+        if(TestingConnect.IsInitialized)
         {
             
         }

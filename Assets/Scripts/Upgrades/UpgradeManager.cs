@@ -14,8 +14,6 @@ public class UpgradeManager : MonoBehaviour
     private int amountOfUpgrades;
     private void Start()
     {
-        UnityServices.InitializeAsync();
-
         instance = this;
         mutationBakers = GetComponentsInChildren<MutationBaker>();
         onUpgrade.AddListener(ExecuteUpgrade);
@@ -86,5 +84,6 @@ public class UpgradeManager : MonoBehaviour
             { "SceneName", SceneManager.GetActiveScene().name },
             { "amountOfLevels", amountOfUpgrades }
         });
+        AnalyticsService.Instance.Flush();
     }
 }
