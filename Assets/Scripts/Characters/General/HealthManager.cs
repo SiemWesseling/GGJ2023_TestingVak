@@ -18,7 +18,6 @@ public class HealthManager : MonoBehaviour
     private int hitsTaken;
     private void Start()
     {
-        UnityServices.InitializeAsync();
         //TestingConnect.AnalitycsInitializedSucces += OnAnalyticsInitializedSucces;
 
         animator = GetComponent<Animator>();
@@ -55,6 +54,7 @@ public class HealthManager : MonoBehaviour
             { "SceneName", SceneManager.GetActiveScene().name },
             { "PlayerHit", hitsTaken }
         });
+        AnalyticsService.Instance.Flush();
     }
 
     void LoseHealth(float amountLost)
