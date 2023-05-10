@@ -21,7 +21,7 @@ public class EnemyMeleeAttacking : MonoBehaviour
         UnityServices.InitializeAsync();
     }
 
-    private void OnAnalyticsInitializedSucces()
+    public void OnAnalyticsInitializedSucces()
     {
         //// Unsubscribe from the event
         //TestingConnect.AnalitycsInitializedSucces -= OnAnalyticsInitializedSucces;
@@ -43,6 +43,7 @@ public class EnemyMeleeAttacking : MonoBehaviour
             {
                 enemyCanAttack = true;
                 timer = 0;
+                OnAnalyticsInitializedSucces();
             }
         }
     }
