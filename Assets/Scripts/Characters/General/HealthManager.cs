@@ -67,7 +67,11 @@ public class HealthManager : MonoBehaviour
             OnAnalyticsInitializedSucces();
         }
 
-        hitsTaken++;
+        if(gameObject.tag == "Player")
+        {
+            hitsTaken++;
+        }
+
  
         UpdateHealth();
     }
