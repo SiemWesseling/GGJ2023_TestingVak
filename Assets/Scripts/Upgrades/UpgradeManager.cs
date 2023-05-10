@@ -81,7 +81,6 @@ public class UpgradeManager : MonoBehaviour
 
         // Now you can log events to the Analytics service
         AnalyticsService.Instance.CustomData("amountOfUpgradesGotten", new Dictionary<string, object> {
-            { "SceneName", SceneManager.GetActiveScene().name },
             { "amountOfLevels", amountOfUpgrades }
         });
         AnalyticsService.Instance.Flush();
