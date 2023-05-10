@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+using Unity.Services.Analytics;
+using Unity.Services.Core;
 using Upgradebehaviours;
 public class UpgradeManager : MonoBehaviour
 {
@@ -8,8 +11,11 @@ public class UpgradeManager : MonoBehaviour
     private static UpgradeManager instance;
     public static UpgradeManager Instance { get { return instance; } private set { instance = value; } }
 
+    private int amountOfUpgrades;
     private void Start()
     {
+        UnityServices.InitializeAsync();
+
         instance = this;
         mutationBakers = GetComponentsInChildren<MutationBaker>();
         onUpgrade.AddListener(ExecuteUpgrade);
@@ -35,6 +41,10 @@ public class UpgradeManager : MonoBehaviour
         }
         //Handle adding new behaviour to the player
         ApplyAddedComponent(upgrade.addThis);
+
+        amountOfUpgrades++;
+        OnAnalyticsInitializedSucces();
+
     }
 
     void ApplyAddedComponent(UpgradeBehavioursData.behaviours behaviour)
@@ -64,5 +74,17 @@ public class UpgradeManager : MonoBehaviour
             mutationBakers[i].Bake(remainingUpgrades[newUpgrade]);
             remainingUpgrades.RemoveAt(newUpgrade);
         }
+    }
+    private void OnAnalyticsInitializedSucces()
+    {
+        //// Unsubscribe from the event
+        //TestingConnect.AnalitycsInitializedSucces -= OnAnalyticsInitializedSucces;
+        Debug.Log("Sending getshit event");
+
+        // Now you can log events to the Analytics service
+        AnalyticsService.Instance.CustomData("amountOfUpgradesGotten", new Dictionary<string, object> {
+            { "SceneName", SceneManager.GetActiveScene().name },
+            { "amountOfLevels", amountOfUpgrades }
+        });
     }
 }
