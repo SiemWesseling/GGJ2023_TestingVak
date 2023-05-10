@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Services.Analytics;
+using Unity.Services.Core;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class EnemyRangedAttack : MonoBehaviour
 {
@@ -22,6 +25,8 @@ public class EnemyRangedAttack : MonoBehaviour
     
     [SerializeField] private GameObject enemyBulletPrefab;
 
+
+    private int rangeAttacks = 0;
     private void Start()
     {
         onPlayerSpotted.AddListener(PlayerSpotted);
@@ -38,7 +43,17 @@ public class EnemyRangedAttack : MonoBehaviour
         
         player = GameObject.FindWithTag("Player");
     }
+    public void OnAnalyticsInitializedSucces()
+    {
+        //// Unsubscribe from the event
+        //TestingConnect.AnalitycsInitializedSucces -= OnAnalyticsInitializedSucces;
+        Debug.Log("Range Attack Test");
 
+        // Now you can log events to the Analytics service
+        AnalyticsService.Instance.CustomData("GotHitFromVirus", new Dictionary<string, object> {
+            { "TotalHitsFromVirus",  rangeAttacks}
+        });
+    }
     private void FixedUpdate()
     {
         if (canShoot)
@@ -78,6 +93,7 @@ public class EnemyRangedAttack : MonoBehaviour
     {
         if (!GameManager.Instance.paused)
         {
+            rangeAttacks++;
             Vector2 direction = (Vector2)(player.transform.position - transform.position).normalized;
             GameObject eBullet = Instantiate(enemyBulletPrefab, transform.position + (Vector3)(direction * 0.5f), Quaternion.identity);
             
@@ -85,6 +101,7 @@ public class EnemyRangedAttack : MonoBehaviour
             
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             eBullet.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+            OnAnalyticsInitializedSucces();
         }
     }
 }

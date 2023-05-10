@@ -14,11 +14,10 @@ public class EnemyMeleeAttacking : MonoBehaviour
 
     private float timer = 0;
     private bool enemyCanAttack = true;
-    private int meleeAttacks;
+    private int meleeAttacks = 0;
 
     private void Start()
     {
-        UnityServices.InitializeAsync();
     }
 
     public void OnAnalyticsInitializedSucces()
@@ -29,7 +28,6 @@ public class EnemyMeleeAttacking : MonoBehaviour
 
         // Now you can log events to the Analytics service
         AnalyticsService.Instance.CustomData("GotHitFromBacteria", new Dictionary<string, object> {
-            { "SceneName", SceneManager.GetActiveScene().name },
             { "TotalHitsFromBacteria",  meleeAttacks}
         });
     }
