@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Rendering.UI;
 using Unity.Services.Analytics;
 using Unity.Services.Core;
+using UnityEngine.SceneManagement;
 
 public class EnemyMeleeAttacking : MonoBehaviour
 {
@@ -13,23 +14,24 @@ public class EnemyMeleeAttacking : MonoBehaviour
 
     private float timer = 0;
     private bool enemyCanAttack = true;
+    private int meleeAttacks;
 
     private void Start()
     {
-        TestingConnect.AnalitycsInitializedSucces += (object sender, EventArgs e) =>
-        {
-            Debug.Log("Analytics Connected");
-            MeleeAttackTestData();
-        };
+        UnityServices.InitializeAsync();
     }
-    private void MeleeAttackTestData()
-    {
-        AnalyticsService.Instance.CustomData("GotHitFromVirus", new Dictionary<string, object> { { "TotalHitsFromVirus", 0 } });
 
-        if(TestingConnect.IsInitialized == true)
-        {
-            
-        }
+    private void OnAnalyticsInitializedSucces()
+    {
+        //// Unsubscribe from the event
+        //TestingConnect.AnalitycsInitializedSucces -= OnAnalyticsInitializedSucces;
+        Debug.Log("Melee Attack Test");
+
+        // Now you can log events to the Analytics service
+        AnalyticsService.Instance.CustomData("GotHitFromBacteria", new Dictionary<string, object> {
+            { "SceneName", SceneManager.GetActiveScene().name },
+            { "TotalHitsFromBacteria",  meleeAttacks}
+        });
     }
     private void FixedUpdate()
     {
@@ -53,6 +55,7 @@ public class EnemyMeleeAttacking : MonoBehaviour
             {
                 MeleeHitPlayer(collision.gameObject.GetComponent<HealthManager>());
                 enemyCanAttack = false;
+                meleeAttacks++;
             }
         }
     }
