@@ -20,7 +20,6 @@ public class HealthManager : MonoBehaviour
     private int hitsTaken;
     private void Start()
     {
-        UnityServices.InitializeAsync();
         //TestingConnect.AnalitycsInitializedSucces += OnAnalyticsInitializedSucces;
 
         animator = GetComponent<Animator>();
@@ -53,6 +52,7 @@ public class HealthManager : MonoBehaviour
         AnalyticsService.Instance.CustomData("PlayerGetsHit", new Dictionary<string, object> {
             { "PlayerHit", hitsTaken }
         });
+        AnalyticsService.Instance.Flush();
 
         AnalyticsService.Instance.CustomData("SurvivalTime", new Dictionary<string, object> {
             { "TimeSurvived", RoboRally.timer }
