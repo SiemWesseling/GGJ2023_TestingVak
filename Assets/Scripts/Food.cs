@@ -10,8 +10,6 @@ public class Food : MonoBehaviour
     public int food = 0;
     public int foodRequired = 20;
 
-    private int amountOfFoodPickedUp;
-
     [SerializeField] private FoodUI foodBar;
     [SerializeField] string upgradeSound;
     [SerializeField] string eatFoodSound;
@@ -23,9 +21,6 @@ public class Food : MonoBehaviour
     public void AddFood()
     {
         food += GameManager.Instance.wave <= 1 ? 1 : GameManager.Instance.wave;
-
-        amountOfFoodPickedUp++;
-        OnAnalyticsInitializedSucces();
 
         if (food >= foodRequired)
         {
@@ -47,18 +42,5 @@ public class Food : MonoBehaviour
         {
             GameManager.Instance.pausingManager.UnPauseGame();
         }
-    }
-
-    private void OnAnalyticsInitializedSucces()
-    {
-        //// Unsubscribe from the event
-        //TestingConnect.AnalitycsInitializedSucces -= OnAnalyticsInitializedSucces;
-        Debug.Log("Sending picking up bloodcell event");
-
-        // Now you can log events to the Analytics service
-        AnalyticsService.Instance.CustomData("redBloodCellsDropped", new Dictionary<string, object> {
-            { "totalRedBloodCellsGotten", amountOfFoodPickedUp }
-        });
-        AnalyticsService.Instance.Flush();
     }
 }
