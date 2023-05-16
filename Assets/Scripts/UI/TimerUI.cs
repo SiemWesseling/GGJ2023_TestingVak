@@ -8,7 +8,7 @@ using Random = Unity.Mathematics.Random;
 public class TimerUI : MonoBehaviour
 {
     
-    [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] public TextMeshProUGUI timerText;
     public float timer = 0;
 
     private void Start()
