@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Services.Analytics;
+using Unity.Services.Core;
 using UnityEngine;
 
 public class Shooting : MonoBehaviour
@@ -20,8 +22,11 @@ public class Shooting : MonoBehaviour
     private float timer = 0;
     private bool playerCanShoot = true;
 
+    private int shotsFired = 0;
+
     void Start()
     {
+        UnityServices.InitializeAsync();
         timer = upgradedShootingCooldown;
     }
 
@@ -37,6 +42,20 @@ public class Shooting : MonoBehaviour
             }
         }
     }
+
+     private void OnAnalyticsInitializedSucces()
+    {
+        //// Unsubscribe from the event
+        //TestingConnect.AnalitycsInitializedSucces -= OnAnalyticsInitializedSucces;
+        Debug.Log("Sending player shooting event");
+
+        // Now you can log events to the Analytics service
+        AnalyticsService.Instance.CustomData("PlayerAccuracy", new Dictionary<string, object> {
+            { "PlayerBullet", shotsFired }
+        });
+        AnalyticsService.Instance.Flush();
+    }
+
 
     void Update()
     {
@@ -66,6 +85,8 @@ public class Shooting : MonoBehaviour
             //Reset cooldown
             playerCanShoot = false;
             timer = 0;
+            shotsFired++;
+            OnAnalyticsInitializedSucces();
             Debug.Log("play shoot");
             AudioManager.Instance.PlaySound(shootSound);
         }

@@ -17,7 +17,9 @@ public class HealthManager : MonoBehaviour
     private TimerUI RoboRally;
     public float currentHealth { get; private set; }
 
-    private int hitsTaken;
+    private int playerHits;
+    private int enemyHits;
+
     private void Start()
     {
         //TestingConnect.AnalitycsInitializedSucces += OnAnalyticsInitializedSucces;
@@ -50,7 +52,12 @@ public class HealthManager : MonoBehaviour
         
         // Now you can log events to the Analytics service
         AnalyticsService.Instance.CustomData("PlayerGetsHit", new Dictionary<string, object> {
-            { "PlayerHit", hitsTaken }
+            { "SceneName", SceneManager.GetActiveScene().name },
+            { "PlayerHit", playerHits }
+        });
+        AnalyticsService.Instance.CustomData("PlayerAccuracy", new Dictionary<string, object> {
+            { "SceneName", SceneManager.GetActiveScene().name },
+            { "EnemyHit", enemyHits }
         });
         
 
@@ -71,11 +78,7 @@ public class HealthManager : MonoBehaviour
             OnAnalyticsInitializedSucces();
         }
 
-        if(gameObject.tag == "Player")
-        {
-            hitsTaken++;
-        }
-
+        hitsTaken++;
  
         UpdateHealth();
     }
