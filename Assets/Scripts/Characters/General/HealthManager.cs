@@ -14,7 +14,7 @@ public class HealthManager : MonoBehaviour
     [SerializeField] public float startHealth = 100;
     public float maxHealth;
 
-    private TimerUI RoboRally;
+    public TimerUI RoboRally;
     public float currentHealth { get; private set; }
 
     private int playerHits;
