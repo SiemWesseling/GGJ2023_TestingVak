@@ -32,7 +32,7 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    Vector2 FollowPlayer()
+    public Vector2 FollowPlayer()
     {
         //todo: dont push player forward on contact
         Vector2 directionToPlayer = new Vector2();

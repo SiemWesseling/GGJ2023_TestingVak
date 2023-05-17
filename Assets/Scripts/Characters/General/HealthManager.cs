@@ -97,7 +97,7 @@ public class HealthManager : MonoBehaviour
     }
 
 
-    protected virtual void Die()
+    protected void Die()
     {
         if (gameObject.tag != "Player")
         {
