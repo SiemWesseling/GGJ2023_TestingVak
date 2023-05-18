@@ -31,8 +31,6 @@ public class Food : MonoBehaviour
     private void Start()
     {
         foodBar.UpdateBar(food, foodRequired);
-
-        StartCoroutine(DetectionCoroutine());
     }
 
     public void AddFood()
@@ -53,13 +51,6 @@ public class Food : MonoBehaviour
         foodBar.UpdateBar(food, foodRequired);
     }
 
-    //Makes food foat to player within certain radius
-    public void FloatFoodToPlayer()
-    {
-        //if player is in range of the food then it follows player
-
-    }
-
     IEnumerator DetectionCoroutine()
     {
         yield return new WaitForSeconds(detectionDelay);
@@ -67,6 +58,9 @@ public class Food : MonoBehaviour
         StartCoroutine(DetectionCoroutine());
     }
 
+    /// <summary>
+    /// Function to detect if player is in the radius to make the food start magnetizing to the player.
+    /// </summary>
     public void PerformDetection()
     {
         Collider2D collider = 
@@ -84,6 +78,10 @@ public class Food : MonoBehaviour
             Target = null;  //Blood cell does not have a target, will not try to detect
         }
     }
+    
+    /// <summary>
+    /// Function that follows the position of the player
+    /// </summary>
     private Vector2 FollowPlayer()
     {
         Vector2 directionToPlayer = new Vector2();
